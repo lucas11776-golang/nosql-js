@@ -702,3 +702,4 @@ if (!nativeBinding) {
 module.exports = nativeBinding
 module.exports.Collection = nativeBinding.Collection
 module.exports.Database = nativeBinding.Database
+module.exports.DeleteResult = nativeBinding.DeleteResult

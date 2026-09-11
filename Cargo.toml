@@ -16,7 +16,7 @@ nosql = { path = "/Users/lucas11776/Desktop/Personal/simple-database/" }
 
 [dependencies.napi]
 version = "3.0.0"
-features = ["napi4", "tokio_rt"]
+features = ["napi4", "tokio_rt", "serde-json"]
 
 [build-dependencies]
 napi-build = "2"

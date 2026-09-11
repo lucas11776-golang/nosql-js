@@ -17,19 +17,28 @@ impl Collection {
         }
     }
 
+    #[napi]
     pub async fn insert_one(&self, mut doc: Value) -> Result<InsertResult> {
-        todo!()
+        self
+            .inner
+            .insert_one(doc)
+            .await
+            .map_err(|e| napi::Error::from_reason(format!("{:#}", e)))
+            .map(|v| InsertResult::from(v))
     }
 
 
+    #[napi]
     pub async fn insert_many(&self, docs: Vec<Value>) -> Result<Vec<InsertResult>> {
         todo!()
     }
 
+    #[napi]
     pub async fn find_one(&self, filter: Value) -> Result<Option<Value>> {
         todo!()
     }
 
+    #[napi]
     pub async fn update(&self, filter: Value, update: Value) -> Result<UpdateResult> {
         todo!()
     }
