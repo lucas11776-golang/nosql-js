@@ -4,7 +4,9 @@ export declare class Collection {
   insertOne(doc: any): Promise<InsertResult>
   insertMany(docs: Array<any>): Promise<Array<InsertResult>>
   findOne(filter: any): Promise<any | null>
+  find(filter: any): Promise<Array<any>>
   update(filter: any, update: any): Promise<UpdateResult>
+  delete(filter: any): Promise<DeleteResult>
 }
 
 export declare class Database {

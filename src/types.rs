@@ -42,10 +42,12 @@ pub struct UpdateResult {
 
 impl From<nosql::UpdateResult> for UpdateResult {
     fn from(value: nosql::UpdateResult) -> Self {
-        todo!()
+        UpdateResult {
+            matched_count: value.matched_count as i64,
+            modified_count: value.modified_count as i64,
+        }
     }
 }
-
 
 #[napi]
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -55,6 +57,8 @@ pub struct DeleteResult {
 
 impl From<nosql::DeleteResult> for DeleteResult {
     fn from(value: nosql::DeleteResult) -> Self {
-        todo!()
+        Self {
+            deleted_count: value.deleted_count as i64,
+        }
     }
 }
