@@ -20,7 +20,7 @@ export declare class Database {
   close(): Promise<void>
 }
 
-export declare class DeleteResult {
+export interface DeleteResult {
   deletedCount: number
 }
 
