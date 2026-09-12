@@ -3,8 +3,8 @@
 export declare class Collection {
   insertOne(doc: any): Promise<InsertResult>
   insertMany(docs: Array<any>): Promise<Array<InsertResult>>
-  findOne(filter: any): Promise<any | null>
-  find(filter: any): Promise<Array<any>>
+  findOne<T>(filter: any): Promise<T>
+  find<T>(filter: any): Promise<T>
   update(filter: any, update: any): Promise<UpdateResult>
   delete(filter: any): Promise<DeleteResult>
 }

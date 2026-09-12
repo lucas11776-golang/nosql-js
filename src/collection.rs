@@ -43,7 +43,10 @@ impl Collection {
             .map_err(|e| napi::Error::from_reason(format!("{:#}", e)))
     }
 
-    #[napi]
+    #[napi(
+        ts_generic_types = "T",
+        ts_return_type = "Promise<T>"
+    )]
     pub async fn find_one(&self, filter: Value) -> Result<Option<Value>> {
         self
             .inner
@@ -52,7 +55,10 @@ impl Collection {
             .map_err(|e| napi::Error::from_reason(format!("{:#}", e)))
     }
 
-    #[napi]
+    #[napi(
+        ts_generic_types = "T",
+        ts_return_type = "Promise<T>"
+    )]
     pub async fn find(&self, filter: Value) -> Result<Vec<Value>> {
         self
             .inner
