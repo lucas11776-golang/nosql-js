@@ -1,5 +1,5 @@
 use napi_derive::napi;
-use nosql::{PageId, SlotId, Value};
+use nosql::Value;
 use serde_derive::{Deserialize, Serialize};
 
 #[napi(object)]
@@ -49,7 +49,7 @@ impl From<nosql::UpdateResult> for UpdateResult {
     }
 }
 
-#[napi]
+#[napi(object)]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct DeleteResult {
     pub deleted_count: i64,
