@@ -58,6 +58,7 @@
     "@napi-rs/wasm-runtime": "^1.2.3",
     "@oxc-node/core": "^0.1.0",
     "@tybys/wasm-util": "^0.10.3",
+    "@types/node": "^22.20.2",
     "ava": "^8.0.1",
     "chalk": "^6.0.0",
     "emnapi": "^2.0.0-alpha.4",
